@@ -21,13 +21,15 @@ def on_subscribe(client, userdata, mid, reason_code_list, properties):
 def on_message(client, userdata, msg):
     try:
         payload = json.loads(msg.payload.decode())
-        print(
-            f"[Subscriber] ← topik '{msg.topic}' | "
-            f"suhu={payload.get('suhu_c')}°C  "
-            f"kelembaban={payload.get('kelembaban')}%  "
-            f"waktu={payload.get('timestamp')}"
-        )
+        print("─" * 50)
+        print(f"[Subscriber] ← Pesan diterima")
+        print(f"  Topik      : {msg.topic}")
+        print(f"  Waktu      : {payload.get('timestamp')}")
+        print(f"  Suhu       : {payload.get('suhu_c')} °C")
+        print(f"  Kelembaban : {payload.get('kelembaban')} %")
+        print(f"  Data lengkap: {json.dumps(payload, indent=4)}")
     except json.JSONDecodeError:
+        print("─" * 50)
         print(f"[Subscriber] ← topik '{msg.topic}' | payload mentah: {msg.payload}")
 
 client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="subscriber-demo")
