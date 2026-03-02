@@ -3,7 +3,7 @@ import json
 import os
 
 # Konfigurasi broker dari environment variable
-BROKER_HOST = os.environ.get("MQTT_BROKER", "broker")
+BROKER_HOST = os.environ.get("MQTT_BROKER", "10.34.100.103")
 BROKER_PORT = int(os.environ.get("MQTT_PORT", 1883))
 TOPIC       = os.environ.get("MQTT_TOPIC", "sensor/suhu")
 
