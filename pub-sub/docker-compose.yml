@@ -1,0 +1,63 @@
+services:
+
+  # ──────────────────────────────────────────────
+  # MQTT Broker (Eclipse Mosquitto)
+  # ──────────────────────────────────────────────
+  broker:
+    image: eclipse-mosquitto:2
+    container_name: mqtt-broker
+    ports:
+      - "1883:1883"   # MQTT
+      - "9001:9001"   # WebSocket
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    restart: unless-stopped
+
+  # ──────────────────────────────────────────────
+  # Publisher — mengirim data sensor setiap 2 detik
+  # ──────────────────────────────────────────────
+  publisher:
+    build: ./publisher
+    container_name: mqtt-publisher
+    depends_on:
+      - broker
+    environment:
+      MQTT_BROKER: broker
+      MQTT_PORT: 1883
+      MQTT_TOPIC: sensor/suhu
+      PUBLISH_INTERVAL: 2         # detik
+    restart: unless-stopped
+
+  # ──────────────────────────────────────────────
+  # Subscriber-1 — pelanggan topik sensor/suhu
+  # ──────────────────────────────────────────────
+  subscriber1:
+    build: ./subscriber
+    container_name: mqtt-subscriber-1
+    depends_on:
+      - broker
+    environment:
+      MQTT_BROKER: broker
+      MQTT_PORT: 1883
+      MQTT_TOPIC: sensor/suhu
+    restart: unless-stopped
+
+  # ──────────────────────────────────────────────
+  # Subscriber-2 — pelanggan wildcard sensor/#
+  # ──────────────────────────────────────────────
+  subscriber2:
+    build: ./subscriber
+    container_name: mqtt-subscriber-2
+    depends_on:
+      - broker
+    environment:
+      MQTT_BROKER: broker
+      MQTT_PORT: 1883
+      MQTT_TOPIC: "sensor/#"      # wildcard: semua sub-topik sensor
+    restart: unless-stopped
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
