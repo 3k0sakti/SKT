@@ -1,11 +1,15 @@
 import paho.mqtt.client as mqtt
 import json
 import os
+import socket
 
 # Konfigurasi broker dari environment variable
 BROKER_HOST = os.environ.get("MQTT_BROKER", "10.34.100.103")
 BROKER_PORT = int(os.environ.get("MQTT_PORT", 1883))
 TOPIC       = os.environ.get("MQTT_TOPIC", "sensor/suhu")
+
+# Client ID unik berdasarkan hostname kontainer agar tidak saling tendang
+CLIENT_ID = f"subscriber-{socket.gethostname()}"
 
 def on_connect(client, userdata, flags, reason_code, properties):
     if reason_code == 0:
@@ -32,7 +36,7 @@ def on_message(client, userdata, msg):
         print("─" * 50)
         print(f"[Subscriber] ← topik '{msg.topic}' | payload mentah: {msg.payload}")
 
-client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id="subscriber-demo")
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2, client_id=CLIENT_ID)
 client.on_connect   = on_connect
 client.on_subscribe = on_subscribe
 client.on_message   = on_message
