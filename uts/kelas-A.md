@@ -34,7 +34,7 @@ Berbeda dengan tugas individual, di sini **keberhasilan sistem bergantung pada k
 
 | Kelompok | Wilayah | Universitas | Repository Sumber Data | PIC (Penerima Akses VM) |
 |----------|---------|-------------|------------------------|-------------------------|
-| **Kelompok 1** | Jawa Barat | Telkom University (Tel-U) | https://repository.telkomuniversity.ac.id/ | **Nadiyatun Nur Aini** |
+| **Kelompok 1** | Jawa Barat | Telkom University (Tel-U) | https://repository.telkomuniversity.ac.id/ | **muhammad arif rifki** |
 | **Kelompok 2** | Jawa Timur | Universitas Brawijaya (UB) | https://repository.ub.ac.id/ | **Steven Anthony** |
 | **Kelompok 3** | Jawa Tengah | Universitas Gadjah Mada (UGM) | https://etd.repository.ugm.ac.id/ | **Izzah Faiq Putri Madani** |
 | **Kelompok 4** | Sumatera | Universitas Sumatera Utara (USU) | https://repository.usu.ac.id/ | **Yoga Raditya Nala** |
