@@ -158,10 +158,10 @@ Tahap 4 — Operasional & Pengujian
 
 | Node ID | Kelompok | Universitas | Wilayah | Kode | IP Address | Port P2P | Port RPC | Port HTTP-API |
 |---------|----------|-------------|---------|------|------------|----------|----------|---------------|
-| VM-1 | K1 – Nadiyatun | Telkom University | Jawa Barat | K1 | 10.0.0.1 | 30303 | 8545 | 8080 |
-| VM-2 | K2 – Steven | Univ. Brawijaya | Jawa Timur | K2 | 10.0.0.2 | 30303 | 8545 | 8080 |
-| VM-3 | K3 – Izzah | Univ. Gadjah Mada | Jawa Tengah | K3 | 10.0.0.3 | 30303 | 8545 | 8080 |
-| VM-4 | K4 – Yoga | Univ. Sumatera Utara | Sumatera | K4 | 10.0.0.4 | 30303 | 8545 | 8080 |
+| VM-1 | K1 – Nadiyatun | Telkom University | Jawa Barat | K1 | 10.34.100.173 | 30303 | 8545 | 8080 |
+| VM-2 | K2 – Steven | Univ. Brawijaya | Jawa Timur | K2 | 10.34.100.174 | 30303 | 8545 | 8080 |
+| VM-3 | K3 – Izzah | Univ. Gadjah Mada | Jawa Tengah | K3 | 10.34.100.177 | 30303 | 8545 | 8080 |
+| VM-4 | K4 – Yoga | Univ. Sumatera Utara | Sumatera | K4 | 10.34.100.176 | 30303 | 8545 | 8080 |
 
 ### Sumber Data per Node
 
