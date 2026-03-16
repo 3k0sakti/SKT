@@ -132,7 +132,7 @@ Tahap 4 — Operasional & Pengujian
 │   │  VM-1        │◄────────────►│  VM-2        │                    │
 │   │  K1 – Tel-U  │              │  K2 – UB     │                    │
 │   │  Jawa Barat  │              │  Jawa Timur  │                    │
-│   │  10.0.0.1    │              │  10.0.0.2    │                    │
+│   │ 10.34.100.173│              │ 10.34.100.174│                    │
 │   │  [Validator] │              │  [Validator] │                    │
 │   └──────┬───────┘              └──────┬───────┘                    │
 │          │                             │                            │
@@ -146,7 +146,7 @@ Tahap 4 — Operasional & Pengujian
 │   │  VM-3        │◄────────────►│  VM-4        │                    │
 │   │  K3 – UGM    │              │  K4 – USU    │                    │
 │   │  Jawa Tengah │              │  Sumatera    │                    │
-│   │  10.0.0.3    │              │  10.0.0.4    │                    │
+│   │ 10.34.100.177│              │ 10.34.100.176│                    │
 │   │  [Validator] │              │  [Validator] │                    │
 │   └──────────────┘              └──────────────┘                    │
 │                                                                     │
