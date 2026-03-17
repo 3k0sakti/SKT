@@ -130,8 +130,8 @@ Tahap 4 — Operasional & Pengujian
 │                                                                     │
 │   ┌──────────────┐              ┌──────────────┐                    │
 │   │  VM-1        │◄────────────►│  VM-2        │                    │
-│   │  K1 – Tel-U  │              │  K2 – UB     │                    │
-│   │  Jawa Barat  │              │  Jawa Timur  │                    │
+│   │  K1 – Undip  │              │  K2 – IPB    │                    │
+│   │  Jawa Tengah │              │  Jawa Barat  │                    │
 │   │  10.0.0.1    │              │  10.0.0.2    │                    │
 │   │  [Validator] │              │  [Validator] │                    │
 │   └──────┬───────┘              └──────┬───────┘                    │
@@ -144,8 +144,8 @@ Tahap 4 — Operasional & Pengujian
 │          │                             │                            │
 │   ┌──────┴───────┐              ┌──────┴───────┐                    │
 │   │  VM-3        │◄────────────►│  VM-4        │                    │
-│   │  K3 – UGM    │              │  K4 – USU    │                    │
-│   │  Jawa Tengah │              │  Sumatera    │                    │
+│   │  K3 – UB     │              │  K4 – Unhas  │                    │
+│   │  Jawa Timur  │              │  Sulawesi Sel│                    │
 │   │  10.0.0.3    │              │  10.0.0.4    │                    │
 │   │  [Validator] │              │  [Validator] │                    │
 │   └──────────────┘              └──────────────┘                    │
@@ -158,19 +158,19 @@ Tahap 4 — Operasional & Pengujian
 
 | Node ID | Kelompok | Universitas | Wilayah | Kode | IP Address | Port P2P | Port RPC | Port HTTP-API |
 |---------|----------|-------------|---------|------|------------|----------|----------|---------------|
-| VM-1 | K1 – Nadiyatun | Telkom University | Jawa Barat | K1 | 10.0.0.1 | 30303 | 8545 | 8080 |
-| VM-2 | K2 – Steven | Univ. Brawijaya | Jawa Timur | K2 | 10.0.0.2 | 30303 | 8545 | 8080 |
-| VM-3 | K3 – Izzah | Univ. Gadjah Mada | Jawa Tengah | K3 | 10.0.0.3 | 30303 | 8545 | 8080 |
-| VM-4 | K4 – Yoga | Univ. Sumatera Utara | Sumatera | K4 | 10.0.0.4 | 30303 | 8545 | 8080 |
+| VM-1 | K1 – Syifani | Univ. Diponegoro | Jawa Tengah | K1 | 10.0.0.1 | 30303 | 8545 | 8080 |
+| VM-2 | K2 – Rafly | IPB University | Jawa Barat | K2 | 10.0.0.2 | 30303 | 8545 | 8080 |
+| VM-3 | K3 – Asyraf | Univ. Brawijaya | Jawa Timur | K3 | 10.0.0.3 | 30303 | 8545 | 8080 |
+| VM-4 | K4 – Wahyu | Univ. Hasanuddin | Sulawesi Selatan | K4 | 10.0.0.4 | 30303 | 8545 | 8080 |
 
 ### Sumber Data per Node
 
 | VM | Universitas | URL Repository | Jenis Data yang Di-crawl |
 |----|-------------|---------------|---------------------------|
-| VM-1 | Telkom University | https://repository.telkomuniversity.ac.id/ | Judul, abstrak, metadata skripsi/TA |
-| VM-2 | Universitas Brawijaya | https://repository.ub.ac.id/ | Judul, abstrak, metadata skripsi/TA |
-| VM-3 | Universitas Gadjah Mada | https://etd.repository.ugm.ac.id/ | Judul, abstrak, metadata tesis/TA |
-| VM-4 | Universitas Sumatera Utara | https://repository.usu.ac.id/ | Judul, abstrak, metadata skripsi/TA |
+| VM-1 | Universitas Diponegoro | https://eprints2.undip.ac.id/ | Judul, abstrak, metadata skripsi/TA |
+| VM-2 | IPB University | https://repository.ipb.ac.id/ | Judul, abstrak, metadata skripsi/TA |
+| VM-3 | Universitas Brawijaya | https://repository.ub.ac.id/ | Judul, abstrak, metadata skripsi/TA |
+| VM-4 | Universitas Hasanuddin | http://repository.unhas.ac.id/cgi/oai2 | Judul, abstrak, metadata skripsi via OAI-PMH (Dublin Core XML) |
 
 ---
 
@@ -183,7 +183,7 @@ Tahap 4 — Operasional & Pengujian
 vm_spec:
   cpu:     2 vCPU          # minimum 1 vCPU masih bisa berjalan (lihat catatan)
   ram:     8 GB            # nyaman untuk semua servis; minimum 2 GB jika hanya geth + API
-  storage: 32 GB SSD       # chain data PoA kelas kecil, 20 GB sudah sangat cukup
+  storage: 20 GB SSD       # chain data PoA kelas kecil, 20 GB sudah sangat cukup
   os:      Ubuntu Server 22.04 LTS
   network: jaringan internal lab / NAT
 
@@ -368,16 +368,16 @@ struct Thesis {
   "documentHash": "0xa3f1c8d2e9b47f6c1a2d3e4f5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4",
   "simhash": "0x7F4A3B2C1D0E9F8A",
   "ipfsCID": "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
-  "title": "Implementasi Machine Learning untuk Prediksi Churn Pelanggan Telekomunikasi",
+  "title": "Implementasi Convolutional Neural Network untuk Deteksi Penyakit Tanaman Padi",
   "authorNIM": "K1-2021***456",
-  "authorName": "Andi Wijaya",
+  "authorName": "Budi Santoso",
   "program": "Teknik Informatika",
   "year": 2025,
-  "keywords": "machine learning, churn prediction, telekomunikasi, random forest",
+  "keywords": "CNN, deep learning, deteksi penyakit, tanaman padi",
   "abstractHash": "0xb4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
   "institutionCode": "K1",
-  "universitas": "Telkom University",
-  "repositoryUrl": "https://repository.telkomuniversity.ac.id/",
+  "universitas": "Universitas Diponegoro",
+  "repositoryUrl": "https://eprints2.undip.ac.id/",
   "institutionAddr": "0x1aB2cD3eF4aB5cD6eF7aB8cD9eF0aB1cD2eF3aB4",
   "timestamp": 1741996800,
   "blockNumber": 1024,
@@ -994,8 +994,8 @@ def verdict(sim: float) -> str:
 ### Skenario 1: Submit Skripsi Orisinal
 
 ```
-Aktor   : K3 – Izzah (VM-3 / UGM)
-Input   : Skripsi dari repository.ugm.ac.id, belum ada di blockchain
+Aktor   : K3 – Asyraf (VM-3 / UB)
+Input   : Skripsi dari repository.ub.ac.id, belum ada di blockchain
 Expected: Terdaftar di blockchain, TX hash diterima
           Status = active, similarity < 30%
 
@@ -1012,14 +1012,14 @@ Steps:
 ### Skenario 2: Deteksi Plagiat Exact Copy
 
 ```
-Aktor   : K1 – Nadiyatun (VM-1 / Tel-U)
-Input   : File PDF identik dengan skripsi yang sudah didaftarkan oleh VM-2 (UB)
+Aktor   : K1 – Syifani (VM-1 / Undip)
+Input   : File PDF identik dengan skripsi yang sudah didaftarkan oleh VM-2 (IPB)
 Expected: Tolak otomatis dengan laporan plagiasi
 
 Steps:
   1. POST /api/v1/thesis/register dari VM-1
   2. SHA-256 identik → cek blockchain
-  3. getThesis(hash) → sudah ada (milik K2/UB)
+  3. getThesis(hash) → sudah ada (milik K2/IPB)
   4. Return 409 Conflict + info dokumen asli
   5. Tidak ada transaksi yang dikirim ke blockchain
 ```
@@ -1027,27 +1027,30 @@ Steps:
 ### Skenario 3: Deteksi Plagiasi Partial (Parafrase)
 
 ```
-Aktor   : K4 – Yoga (VM-4 / USU)
-Input   : Skripsi dari repository USU yang ~65% kontennya mirip dengan
-          skripsi dari repository UGM (VM-3)
+Aktor   : K4 – Wahyu (VM-4 / Unhas)
+Input   : Skripsi dari repository Unhas (di-harvest via OAI-PMH) yang ~65%
+          kontennya mirip dengan skripsi dari repository UB (VM-3)
 Expected: Terdaftar dengan status "flagged", laporan dibuat
 
 Steps:
-  1. POST /api/v1/thesis/register dari VM-4
-  2. SHA-256 berbeda (lolos pre-check)
-  3. SimHash distance = 10 bit → kandidat!
-  4. Unduh full text dari IPFS VM-3 (data UGM)
-  5. MinHash Jaccard = 0.65 → 65%
-  6. registerThesis() dipanggil + reportPlagiarism()
-  7. Event ThesisFlagged di-emit
-  8. Notifikasi ke VM-3 (K3/UGM) dan VM-4 (K4/USU)
-  9. Status dokumen baru = 2 (flagged) ⚠️
+  1. OAI-PMH Crawler K4 harvest record dari repository.unhas.ac.id/cgi/oai2
+  2. Parse Dublin Core XML → ekstrak metadata + abstrak
+  3. Upload PDF ke IPFS → dapatkan CID
+  4. POST /api/v1/thesis/register dari VM-4 (otomatis dari pipeline)
+  5. SHA-256 berbeda (lolos pre-check)
+  6. SimHash distance = 10 bit → kandidat!
+  7. Unduh full text dari IPFS VM-3 (data UB)
+  8. MinHash Jaccard = 0.65 → 65%
+  9. registerThesis() dipanggil + reportPlagiarism()
+  10. Event ThesisFlagged di-emit
+  11. Notifikasi ke VM-3 (K3/UB) dan VM-4 (K4/Unhas)
+  12. Status dokumen baru = 2 (flagged) ⚠️
 ```
 
 ### Skenario 4: Node VM-2 Offline
 
 ```
-Kondisi : VM-2 (K2 – Steven / UB) mati / tidak dapat diakses
+Kondisi : VM-2 (K2 – Rafly / IPB) mati / tidak dapat diakses
 Expected: Jaringan tetap berjalan (3 dari 4 node aktif)
 
 Steps:
@@ -1060,6 +1063,48 @@ Steps:
      a. Request sync dari peer
      b. Unduh blok yang terlewat
      c. Kembali aktif sebagai validator ✅
+```
+
+### Skenario 5: Demo Pipeline OAI-PMH K4 (Unhas)
+
+```
+Aktor   : K4 – Wahyu (VM-4 / Unhas)
+Input   : Endpoint OAI-PMH Unhas: http://repository.unhas.ac.id/cgi/oai2
+Expected: Pipeline otomatis harvest → parse → IPFS → blockchain berjalan end-to-end
+
+Steps:
+  1. Jalankan harvester:
+     python oai_harvester.py \
+       --baseurl http://repository.unhas.ac.id/cgi/oai2 \
+       --metadataPrefix oai_dc \
+       --set thesis
+
+  2. Parser Dublin Core XML:
+     • Ekstrak: dc:title, dc:creator, dc:description (abstrak),
+       dc:date, dc:subject, dc:identifier (URL PDF)
+     • Validasi field wajib (title + creator + date tidak boleh kosong)
+
+  3. Upload ke IPFS:
+     • Download PDF dari dc:identifier
+     • ipfs add <file.pdf> → dapatkan CIDv1
+     • Simpan mapping { oai_identifier → ipfsCID } di local DB
+
+  4. Register ke blockchain via API:
+     POST /api/v1/thesis/register {
+       "oaiIdentifier": "oai:unhas.ac.id:123456",
+       "ipfsCID": "bafybei...",
+       "groupCode": "K4"
+     }
+
+  5. Verifikasi on-chain:
+     • getThesis(docHash) → muncul di semua node
+     • net.peerCount == 3 → semua node sudah sync
+
+  6. Expected output per record:
+     { txHash, blockNumber, documentHash, simhash, ipfsCID, oaiSource }
+
+Catatan: K4 wajib mendemonstrasikan minimal 5 record harvested dari
+repository Unhas yang berhasil masuk ke blockchain secara otomatis.
 ```
 
 ---
@@ -1184,16 +1229,16 @@ Dimana:
 #### Contoh Perhitungan
 
 ```
-Kelompok K3 — VM-3 (UGM)
+Kelompok K3 — VM-3 (UB)
 
 Nilai Sistem    : 85  × 60% = 51.0
 Nilai Laporan   : 80  × 15% = 12.0
 Nilai Presentasi: 78  × 10% =  7.8
 
-Anggota: Izzah Faiq Putri Madani
+Anggota: Asyraf Rizqy K
 Skor Peer       : 22  × 15% =  3.3  (dari maks 25)
 
-Nilai Akhir Izzah = 51.0 + 12.0 + 7.8 + 3.3 = 74.1
+Nilai Akhir Asyraf = 51.0 + 12.0 + 7.8 + 3.3 = 74.1
 ```
 
 ---
