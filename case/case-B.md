@@ -158,10 +158,10 @@ Tahap 4 — Operasional & Pengujian
 
 | Node ID | Kelompok | Universitas | Wilayah | Kode | IP Address | Port P2P | Port RPC | Port HTTP-API |
 |---------|----------|-------------|---------|------|------------|----------|----------|---------------|
-| VM-1 | K1 – Syifani | Univ. Diponegoro | Jawa Tengah | K1 | 10.0.0.1 | 30303 | 8545 | 8080 |
-| VM-2 | K2 – Rafly | IPB University | Jawa Barat | K2 | 10.0.0.2 | 30303 | 8545 | 8080 |
-| VM-3 | K3 – Asyraf | Univ. Brawijaya | Jawa Timur | K3 | 10.0.0.3 | 30303 | 8545 | 8080 |
-| VM-4 | K4 – Wahyu | Univ. Hasanuddin | Sulawesi Selatan | K4 | 10.0.0.4 | 30303 | 8545 | 8080 |
+| VM-1 | K1 – Syifani | Univ. Diponegoro | Jawa Tengah | K1 | 10.34.100.182 | 30303 | 8545 | 8080 |
+| VM-2 | K2 – Rafly | IPB University | Jawa Barat | K2 | 10.34.100.183 | 30303 | 8545 | 8080 |
+| VM-3 | K3 – Asyraf | Univ. Brawijaya | Jawa Timur | K3 | 10.34.100.184 | 30303 | 8545 | 8080 |
+| VM-4 | K4 – Wahyu | Univ. Hasanuddin | Sulawesi Selatan | K4 | 10.34.100.185 | 30303 | 8545 | 8080 |
 
 ### Sumber Data per Node
 
@@ -183,7 +183,7 @@ Tahap 4 — Operasional & Pengujian
 vm_spec:
   cpu:     2 vCPU          # minimum 1 vCPU masih bisa berjalan (lihat catatan)
   ram:     8 GB            # nyaman untuk semua servis; minimum 2 GB jika hanya geth + API
-  storage: 20 GB SSD       # chain data PoA kelas kecil, 20 GB sudah sangat cukup
+  storage: 32 GB SSD       # chain data PoA kelas kecil, 20 GB sudah sangat cukup
   os:      Ubuntu Server 22.04 LTS
   network: jaringan internal lab / NAT
 
