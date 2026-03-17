@@ -183,7 +183,7 @@ Tahap 4 — Operasional & Pengujian
 vm_spec:
   cpu:     2 vCPU          # minimum 1 vCPU masih bisa berjalan (lihat catatan)
   ram:     8 GB            # nyaman untuk semua servis; minimum 2 GB jika hanya geth + API
-  storage: 20 GB SSD       # chain data PoA kelas kecil, 20 GB sudah sangat cukup
+  storage: 32 GB SSD       # chain data PoA kelas kecil, 20 GB sudah sangat cukup
   os:      Ubuntu Server 22.04 LTS
   network: jaringan internal lab / NAT
 
