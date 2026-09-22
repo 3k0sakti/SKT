@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Distributed Systems Docker Lab</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; background: #0f172a; color: #e2e8f0; }
+    h1 { color: #38bdf8; }
+    .card { background: #1e293b; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; }
+    .ok { color: #4ade80; }
+    .err { color: #f87171; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #334155; }
+    code { background: #334155; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>🐳 Web App container</h1>
+
+  <div class="card">
+    <p><strong>This container's hostname:</strong> <code>{{ hostname }}</code></p>
+    <p><strong>Talking to API at:</strong> <code>{{ api_url }}</code></p>
+    <p><strong>API status:</strong>
+      {% if api_status == "connected" %}
+        <span class="ok">{{ api_status }}</span>
+      {% else %}
+        <span class="err">{{ api_status }}</span>
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Students (fetched live from the REST API service)</h2>
+    {% if students %}
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Course</th></tr>
+      {% for s in students %}
+      <tr><td>{{ s.id }}</td><td>{{ s.name }}</td><td>{{ s.course }}</td></tr>
+      {% endfor %}
+    </table>
+    {% else %}
+      <p>No data (is the <code>api</code> container running?)</p>
+    {% endif %}
+  </div>
+
+  <p style="color:#94a3b8; font-size: 0.9em;">
+    Reload this page a few times after you scale the web service
+    (Part 7 of the guide) and watch the hostname change between containers.
+  </p>
+</body>
+</html>

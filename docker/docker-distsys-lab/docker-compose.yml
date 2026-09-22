@@ -1,0 +1,45 @@
+# docker-compose.yml
+# This file describes a small "distributed system" of two services
+# (two independent containers) and how they connect to each other.
+#
+# Run it from THIS folder with:  docker compose up --build
+
+services:
+
+  web:
+    # "build: ./01-web-app" tells Compose to build an image using the
+    # Dockerfile found inside that folder, instead of pulling a ready-made
+    # image from Docker Hub.
+    build: ./01-web-app
+    container_name: distsys-web
+    ports:
+      # "host_port:container_port"
+      # Visit http://localhost:5000 on YOUR computer to reach port 5000
+      # inside the container.
+      - "5000:5000"
+    environment:
+      # Inside the Docker network created by Compose, containers can reach
+      # each other BY SERVICE NAME. "api" below is not an IP address -
+      # it's literally the service name defined further down this file.
+      # Docker's internal DNS resolves "api" to the api container's IP.
+      - API_URL=http://api:5001
+    depends_on:
+      - api
+    networks:
+      - distsys-net
+
+  api:
+    build: ./02-rest-api
+    container_name: distsys-api
+    ports:
+      # Exposed to your host too, so you can curl/test it directly.
+      - "5001:5001"
+    networks:
+      - distsys-net
+
+networks:
+  # A custom bridge network so "web" and "api" can find each other by name.
+  # (Compose actually creates one automatically even without this, but
+  # naming it explicitly makes the concept easier to see and inspect.)
+  distsys-net:
+    driver: bridge
